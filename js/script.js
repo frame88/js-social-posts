@@ -51,25 +51,25 @@ let user = [
         image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Icecat1-300x300.svg/1200px-Icecat1-300x300.svg.png',
         nome: 'Gino Alongi',
         time: '2 anni fa',
-        like: '23 like',
+        like: '23 ',
     },
     {
         image:'https://www.fivechanges.com/wp-content/uploads/2014/09/astronaut-300x300.jpg',
         nome: 'Luca Pellegrino',
         time: '3 giorni fa',
-        like: '61 like',
+        like: '61 ',
     },
     {
         image: 'https://i.pinimg.com/474x/88/31/c6/8831c6628b6a3fb79db75b39d8ef98d6.jpg',
         nome: 'Laura Ebbasta',
         time: 'Ieri',
-        like: '1 like',
+        like: '1 ',
     },
 ]
 
 
 const container = document.querySelector('.posts-list');
-container.innerHTML = '';
+//container.innerHTML = '';
 
 for (let index = 0; index < user.length; index++) {
     const element = user[index];
@@ -99,15 +99,24 @@ for (let index = 0; index < user.length; index++) {
                     </a>
                 </div>
                 <div class="likes__counter">
-                    Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                    Piace a <b id="like-counter-1" class="js-likes-counter">${element.like}</b> persone
                 </div>
             </div>
         </div>
     </div>
     `;
     container.innerHTML += template;
-    console.log(element.name);
 }
 
-//      
+
+
+//  LIKE BUTTON
+
+function like() {
+    let element = document.getElementById('like-counter-1');
+    parseInt(element);
+    let value = element.innerHTML += 1;
+    document.getElementById('.like-counter-1').innerHTML = value;
+    console.log(value); 
+}
 
